@@ -1,0 +1,320 @@
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `admin_id` int(11) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`admin_id`, `email`, `password`) VALUES
+(1, 'ananth@gmail.com', 'ananth'),
+(2, 'admin@admin.com', 'admin');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `answer`
+--
+
+CREATE TABLE `answer` (
+  `qid` text NOT NULL,
+  `ansid` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `answer`
+--
+
+INSERT INTO `answer` (`qid`, `ansid`) VALUES
+('5dd60d6790de4','5dd60d6792b8d'),
+('5dd60d679eb49','5dd60d67a08bb'),
+('5dd610265c34c','5dd61026609d6'),
+('5dd610266d644','5dd610266f63d'),
+('5dd610c10ed7c','5dd610c110b3c'),
+('5dd610c11dc6c','5dd610c11f911'),
+('5dd610c12cb57','5dd610c12ed09'),
+('5dd611b93b051','5dd611b93cce0'),
+('5dd611b94972d','5dd611b94b487'),
+('5dd611b957d1a','5dd611b95cd05'),
+('5dd611b966702','5dd611b9687d6'),
+('5dd611b97242d','5dd611b97455e');
+
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `feedback`
+--
+
+CREATE TABLE `feedback` (
+  `id` text NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `subject` varchar(500) NOT NULL,
+  `feedback` varchar(500) NOT NULL,
+  `date` date NOT NULL,
+  `time` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `feedback`
+--
+
+INSERT INTO `feedback` (`id`, `name`, `email`, `subject`, `feedback`, `date`, `time`) VALUES
+('5dd61305397e3', 'Ananth', 'an@gmail.com', 'DBMS', 'Very good', '2019-11-21', '05:31:01am'),
+('5dd6139b9f176', 'Ankith', 'ann@gmail.com', 'C++', 'Nice', '2019-11-21', '05:33:31am');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `history`
+--
+
+CREATE TABLE `history` (
+  `email` varchar(50) NOT NULL,
+  `eid` text NOT NULL,
+  `score` int(11) NOT NULL,
+  `level` int(11) NOT NULL,
+  `sahi` int(11) NOT NULL,
+  `wrong` int(11) NOT NULL,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `history`
+--
+
+INSERT INTO `history` (`email`, `eid`, `score`, `level`, `sahi`, `wrong`, `date`) VALUES
+('an@gmail.com', '5dd610e10aa44', 5, 5, 5, 0, '2019-11-21 09:59:52'),
+('an@gmail.com', '5dd6105b73d5f', 3, 3, 3, 0, '2019-11-21 10:00:05'),
+('an@gmail.com', '5dd60fc770050', 2, 2, 2, 0, '2019-11-21 10:00:17'),
+('an@gmail.com', '5dd60d0fdf878', 2, 2, 2, 0, '2019-11-21 10:00:26'),
+('ann@gmail.com', '5dd610e10aa44', 5 ,5, 5, 0, '2019-11-21 10:02:20'),
+('ann@gmail.com', '5dd6105b73d5f', 3 ,3, 3, 0, '2019-11-21 10:02:48'),
+('ann@gmail.com', '5dd60fc770050', 2 ,2, 2, 0, '2019-11-21 10:03:00'),
+('ann@gmail.com', '5dd60d0fdf878', 0 ,2, 1, 1, '2019-11-21 10:03:09'),
+('ab@gmail.com', '5dd610e10aa44', 5, 5, 5, 0, '2019-11-21 10:05:57'),
+('ab@gmail.com', '5dd6105b73d5f', 3, 3, 3, 0, '2019-11-21 10:06:16'),
+('ab@gmail.com', '5dd60fc770050', 0, 2, 1, 1, '2019-11-21 10:06:28'),
+('ab@gmail.com', '5dd60d0fdf878', 0, 2, 1, 1, '2019-11-21 10:06:40');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `options`
+--
+
+CREATE TABLE `options` (
+  `qid` varchar(50) NOT NULL,
+  `option` varchar(5000) NOT NULL,
+  `optionid` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `options`
+--
+
+INSERT INTO `options` (`qid`, `option`, `optionid`) VALUES
+('5dd60d6790de4', 'echo', '5dd60d6792b8d'),
+('5dd60d6790de4', 'print', '5dd60d6792b94'),
+('5dd60d6790de4', 'printf', '5dd60d6792b95'),
+('5dd60d6790de4', 'cout', '5dd60d6792b96'),
+('5dd60d679eb49', 'int a', '5dd60d67a08b4'),
+('5dd60d679eb49', '$a', '5dd60d67a08bb'),
+('5dd60d679eb49', 'long int a', '5dd60d67a08bc'),
+('5dd60d679eb49', 'int a$', '5dd60d67a08bd'),
+('5dd610265c34c', 'cin>>a;', '5dd61026609d6'),
+('5dd610265c34c', 'cin<', '5dd61026609dc'),
+('5dd610265c34c', 'cout>>a;', '5dd61026609dd'),
+('5dd610265c34c', 'cout', '5dd61026609df'),
+('5dd610266d644', 'Cout', '5dd610266f63d'),
+('5dd610266d644', 'Cin', '5dd610266f648'),
+('5dd610266d644', 'print', '5dd610266f64b'),
+('5dd610266d644', 'printf', '5dd610266f64d'),
+('5dd610c10ed7c', 'Charles Babbage', '5dd610c110b34'),
+('5dd610c10ed7c', 'James A.Gosling', '5dd610c110b3a'),
+('5dd610c10ed7c', 'Dennis Ritchie',  '5dd610c110b3c'),
+('5dd610c10ed7c', 'Dr.E.F.Codd','5dd610c110b3d'),
+('5dd610c11dc6c', 'System Programming language', '5dd610c11f911'),
+('5dd610c11dc6c', 'General purpose language', '5dd610c11f916'),
+('5dd610c11dc6c', 'Data processing language', '5dd610c11f918'),
+('5dd610c11dc6c', 'None of the this', '5dd610c11f919'),
+('5dd610c12cb57', '30', '5dd610c12ecfe');
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `questions`
+--
+
+CREATE TABLE `questions` (
+  `eid` text NOT NULL,
+  `qid` text NOT NULL,
+  `qns` text NOT NULL,
+  `choice` int(10) NOT NULL,
+  `sn` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `questions`
+--
+
+INSERT INTO `questions` (`eid`, `qid`, `qns`, `choice`, `sn`) VALUES
+('5dd60d0fdf878', '5dd60d6790de4', 'Which is command for print in PHP?', 4, 1),
+('5dd60d0fdf878', '5dd60d679eb49', 'Which is a variable of PHP?', 4, 2),
+('5dd60fc770050', '5dd610265c34c', 'What is correct statement in C++?', 4, 1),
+('5dd60fc770050', '5dd610266d644', 'Which command is used for print the output in C++?', 4, 2),
+('5dd6105b73d5f', '5dd610c10ed7c', 'Who is the father of C language?', 4, 1),
+('5dd6105b73d5f', '5dd610c11dc6c', 'C was primarily developed as', 4, 2),
+('5dd6105b73d5f', '5dd610c12cb57', 'Standard ANSI recognizes_____ number of keywords', 4, 3),
+('5dd610e10aa44', '5dd611b93b051', 'How many primary keys can be there in a Relation?', 4, 1),
+('5dd610e10aa44', '5dd611b94972d', 'DBMS manages the interaction between _______ and d...', 4, 2),
+('5dd610e10aa44', '5dd611b957d1a', 'Database is generally', 4, 3),
+('5dd610e10aa44', '5dd611b966702', 'Which of the following is not involved in DBMS?', 4, 4),
+('5dd610e10aa44', '5dd611b97242d', 'A characteristic of an entity is', 4, 5);
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `quiz`
+--
+
+CREATE TABLE `quiz` (
+  `eid` text NOT NULL,
+  `title` varchar(100) NOT NULL,
+  `sahi` int(11) NOT NULL,
+  `wrong` int(11) NOT NULL,
+  `total` int(11) NOT NULL,
+  `time` bigint(20) NOT NULL,
+  `intro` text NOT NULL,
+  `tag` varchar(100) NOT NULL,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `quiz`
+--
+
+INSERT INTO `quiz` (`eid`, `title`, `sahi`, `wrong`, `total`, `time`, `intro`, `tag`, `date`) VALUES
+('5dd60d0fdf878', 'Php', 1, 1, 2, 2, 'PHP', '2019-11-21 09:35:35'),
+('5dd60fc770050', 'C++', 1, 1, 2, 2, 'C++', '2019-11-21 09:47:11'),
+('5dd6105b73d5f', 'C', 1, 0, 3, 3, 'C', '2019-11-21 09:49:39'),
+('5dd610e10aa44','Dbms', 1, 0, 5, 5,'DBMS', '2019-11-21 09:51:53');
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `rank`
+--
+
+CREATE TABLE `rank` (
+  `email` varchar(50) NOT NULL,
+  `score` int(11) NOT NULL,
+  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `rank`
+--
+
+INSERT INTO `rank` (`email`, `score`, `time`) VALUES
+('an@gmail.com', 12, '2019-11-21 10:00:27'),
+('ann@gmail.com', 10, '2019-11-21 10:03:10'),
+('ab@gmail.com', 8, '2019-11-21 10:06:40');
+
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `name` varchar(50) NOT NULL,
+  `gender` varchar(5) NOT NULL,
+  `college` varchar(100) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `mob` bigint(20) NOT NULL,
+  `password` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`name`, `gender`, `college`, `email`, `mob`, `password`) VALUES
+('Ananya', 'F', 'SJBIT', 'ab@gmail.com', 654321, '6c44e5cd17f0019c64b042e4a745412a'),
+('Ananth', 'M', 'jss', 'an@gmail.com', 123456789, 'e10adc3949ba59abbe56e057f20f883e');
+('Ankith', 'M', 'jss', 'ann@gmail.com', 987654321, 'c33367701511b4f6020ec61ded352059');
+
+-------------------------------------------------------------------
+
+--
+-- Table Structure for table `log`
+--
+
+CREATE TABLE `log` (
+`name` varchar(50) NOT NULL,
+`email` varchar(50) NOT NULL,
+`college` varchar(100) NOT NULL,
+`mob` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8; 
+
+
+
+------------------------------------------------------------------------
+
+--
+-- Table Structure for table `loog`
+--
+
+CREATE TABLE `loog` (
+`title`varchar(20) NOT NULL,
+`total`int(11) NOT NULL,
+`time` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8; 
+
+
+---------------------------------------------------------------------------
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`admin_id`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`email`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
